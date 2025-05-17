@@ -41,9 +41,9 @@ def send_transaction():
         'from': account.address,
         'nonce': w3.eth.get_transaction_count(account.address),
         'chainId': CHAIN_ID,
-        'gas': 300000,
-        'maxFeePerGas': Web3.to_wei(2, 'gwei'),
-        'maxPriorityFeePerGas': Web3.to_wei(2, 'gwei')
+        'gas': 300000, # можно оставить без изменений
+        'maxFeePerGas': Web3.to_wei(2, 'gwei'),   # если указать 1 млн, то при параметре gas 300000, максимум потребуется 300 ETH
+        'maxPriorityFeePerGas': Web3.to_wei(2, 'gwei')  # ставить значение, такое же как и в maxFeePerGas
     })
 
     signed_tx = account.sign_transaction(tx)

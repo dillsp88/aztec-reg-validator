@@ -63,7 +63,7 @@ def schedule_transaction():
     print(f"Транзакция запланирована на {SCHEDULED_TIME} UTC")
 
     Timer(delay, send_transaction).start()
-    time.sleep(delay + 1)  # Ожидаем завершения
+    time.sleep(delay + 1) 
 
 
 if __name__ == "__main__":
